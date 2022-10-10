@@ -1,0 +1,5 @@
+6.1 SELECT  SUM("Kol-vo") AS "Kol-vo", T.Nomenklatyra FROM T GROUP BY T.Nomenklatyra HAVING SUM("Kol-vo") >= 10
+6.2 SELECT T.Nomenklatyra AS Nomenklatyra, COUNT(T.Nomenklatyra) AS Count FROM T GROUP BY T.Nomenklatyra
+7.1  SELECT T.Nomenklatyra, (T."Kol-vo"*p.Price) AS SToimost From T Inner Join price p on T.Nomenklatyra = p.Nomenklatyra
+7.2 select T.Nomenklatyra, T."Kol-vo"*price.Price from T left join price on T.Nomenklatyra = price.Nomenklatyra
+8 SELECT * FROM ex8 AS ex1 WHERE data = (SELECT MAX(data) FROM ex8 AS ex2 WHERE ex1.Name = ex2.Name)  ORDER BY ex1.Name
